@@ -1,19 +1,14 @@
 import sys
 from curses import wrapper
 from game import Game 
+from interface import Interface
 
 def drawBoard(stdscr, board):
     stdscr.addstr(board)
 
 def main(stdscr):
-    game = Game()
-    stdscr.clear()
-    board = game.getBoard()
-    drawBoard(stdscr, board)
-    while True:
-        stdscr.refresh() 
-        key = stdscr.getch()
-        stdscr.addstr(key)
+    interface = Interface(stdscr)
+    interface.start()
 
 
 wrapper(main)

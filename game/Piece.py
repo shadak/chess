@@ -1,15 +1,33 @@
 class Piece:
-    def __init__(self, position, color):
+    def __init__(self, position, player):
         self.x, self.y = position
-        self.color = color
+        self.player = player
 
     def makeMove(position):
         self.x, self.y = position
 
+    def __string__(self):
+        return 'Test'
 class Pawn(Piece):
-    
-    def getMoves():
-        moves = [[self.x-1, self.y+1], [self.x, self.y+1], [self.x+1, self.y+1]]
-        return moves
+    def checkMove(self):
+        return False
 
- 
+class Rook(Piece):
+    def checkMove(self):
+        return False
+
+class Knight(Piece):
+    def checkMove(self):
+        return False
+
+class Bishop(Piece):
+    def checkMove(self):
+        return False
+
+class King(Piece):
+    def checkMove(self):
+        return False
+
+class Queen(Piece):
+    def checkMove(self):
+        return False
